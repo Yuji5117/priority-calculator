@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 interface PropsType {
   priorityScore: number;
+  onChengePriorityType: (priorityScore: number) => void;
 }
 
 const Header = ({ priorityScore }: PropsType) => {

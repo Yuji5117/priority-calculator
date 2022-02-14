@@ -1,34 +1,28 @@
 import { Slider } from "@material-ui/core";
-import React from "react";
 import styled from "styled-components";
 
-const Main = () => {
-  const marks = [
-    {
-      value: 1,
-      label: "全施設の3割未満",
-    },
-    {
-      value: 3,
-      label: "3〜6割",
-    },
-    {
-      value: 5,
-      label: "6割以上",
-    },
-  ];
+import { marks } from "../store/marks";
 
+interface PropsType {
+  priorityScore: number;
+  priorityType: number;
+  caluculatePriorityScore: (event: any) => void;
+}
+
+const Main = (props: PropsType) => {
   return (
     <Wrapper>
       <Container>
         <div>
-          <Title>既存施設アカウント数</Title>
+          <Title>{marks.r_facilities_count.title}</Title>
           <Slider
+            value={props.priorityScore}
+            onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            marks={marks}
+            marks={marks.r_facilities_count.option}
             min={1}
             max={5}
           />
@@ -40,7 +34,7 @@ const Main = () => {
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            marks={marks}
+            marks={marks.r_facilities_count.option}
             min={1}
             max={5}
           />
@@ -52,7 +46,7 @@ const Main = () => {
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            marks={marks}
+            // marks={marks}
             min={1}
             max={5}
           />
@@ -64,7 +58,7 @@ const Main = () => {
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            marks={marks}
+            // marks={marks}
             min={1}
             max={5}
           />
@@ -76,7 +70,7 @@ const Main = () => {
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            marks={marks}
+            // marks={marks}
             min={1}
             max={5}
           />
@@ -88,7 +82,7 @@ const Main = () => {
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            marks={marks}
+            // marks={marks}
             min={1}
             max={5}
           />
@@ -100,7 +94,7 @@ const Main = () => {
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            marks={marks}
+            // marks={marks}
             min={1}
             max={5}
           />
@@ -112,7 +106,7 @@ const Main = () => {
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            marks={marks}
+            // marks={marks}
             min={1}
             max={5}
           />
