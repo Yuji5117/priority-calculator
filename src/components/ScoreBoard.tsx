@@ -9,7 +9,7 @@ interface PropsType {
   caluculatePriorityScore: (event: any) => void;
 }
 
-const Main = (props: PropsType) => {
+const ScoreBoard = (props: PropsType) => {
   return (
     <Wrapper>
       <Container>
@@ -116,7 +116,7 @@ const Main = (props: PropsType) => {
   );
 };
 
-export default Main;
+export default ScoreBoard;
 
 const Wrapper = styled.div`
   box-sizing: border-box;

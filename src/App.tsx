@@ -3,6 +3,7 @@ import styled from "styled-components";
 import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import ScoreBoard from "./components/ScoreBoard";
 
 function App() {
   const [priorityScore, setPriorityScore] = useState<number>(0);
@@ -22,7 +23,7 @@ function App() {
         priorityScore={priorityScore}
         onChengePriorityType={onChengePriorityType}
       />
-      <Main
+      <ScoreBoard
         priorityScore={priorityScore}
         priorityType={priorityType}
         caluculatePriorityScore={caluculatePriorityScore}
