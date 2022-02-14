@@ -7,13 +7,33 @@ interface PropsType {
 }
 
 const Header = ({ priorityScore }: PropsType) => {
+  const copyTextToClipboard = (text: any): void => {
+    navigator.clipboard.writeText(text);
+  };
+
+  const formatedAsMarkdown = (): string => {
+    // const resultArr = this.getResultTitleAndNum();
+    let text = "";
+    text += "## メリット量\n";
+    text += "\n";
+    text += "| name | value |\n";
+    text += "| ---- | ---- |\n";
+    // resultArr.forEach((r) => {
+    //   text += "| " + r.title + " | " + r.num + " |\n";
+    // });
+    text += "| **total** | **" + priorityScore + "** |\n";
+    return text;
+  };
+
   return (
     <Wrapper>
       <Container>
         <Title>Priority Calculator</Title>
         <Content>
           <p>メリット量:{priorityScore}</p>
-          <p>コピー</p>
+          <button onClick={() => copyTextToClipboard(formatedAsMarkdown())}>
+            コピー
+          </button>
         </Content>
         <MenuTab>
           <TabItem>バグ改修</TabItem>
