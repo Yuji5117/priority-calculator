@@ -14,15 +14,15 @@ const ScoreBoard = (props: PropsType) => {
     <Wrapper>
       <Container>
         <div>
-          <Title>{marks.r_facilities_count.title}</Title>
+          <Title>{marks[0].r_facilities_count.title}</Title>
           <Slider
-            value={props.priorityScore}
             onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
             defaultValue={1}
             valueLabelDisplay="auto"
+            name="既存施設"
             step={null}
-            marks={marks.r_facilities_count.option}
+            marks={marks[0].r_facilities_count.option}
             min={1}
             max={5}
           />
@@ -30,11 +30,13 @@ const ScoreBoard = (props: PropsType) => {
         <div>
           <Title>頻度</Title>
           <Slider
+            onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
+            name="頻度"
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            marks={marks.r_facilities_count.option}
+            marks={marks[1].r_frequency.option}
             min={1}
             max={5}
           />
@@ -46,7 +48,7 @@ const ScoreBoard = (props: PropsType) => {
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            // marks={marks}
+            marks={marks[1].r_frequency.option}
             min={1}
             max={5}
           />
@@ -58,7 +60,7 @@ const ScoreBoard = (props: PropsType) => {
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            // marks={marks}
+            marks={marks[1].r_frequency.option}
             min={1}
             max={5}
           />
@@ -70,7 +72,7 @@ const ScoreBoard = (props: PropsType) => {
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            // marks={marks}
+            marks={marks[4].i_user_spread_degrees.option}
             min={1}
             max={5}
           />
@@ -82,7 +84,7 @@ const ScoreBoard = (props: PropsType) => {
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            // marks={marks}
+            marks={marks[5].i_after_actions.option}
             min={1}
             max={5}
           />
@@ -91,24 +93,24 @@ const ScoreBoard = (props: PropsType) => {
           <Title>社外コミット</Title>
           <Slider
             aria-label="Temperature"
-            defaultValue={1}
+            defaultValue={0}
             valueLabelDisplay="auto"
             step={null}
-            // marks={marks}
-            min={1}
-            max={5}
+            marks={marks[6].i_commit.option}
+            min={0}
+            max={25}
           />
         </div>
         <div>
           <Title>事業戦略的観点</Title>
           <Slider
             aria-label="Temperature"
-            defaultValue={1}
+            defaultValue={0}
             valueLabelDisplay="auto"
             step={null}
-            // marks={marks}
-            min={1}
-            max={5}
+            marks={marks[7].i_strategy.option}
+            min={0}
+            max={10}
           />
         </div>
       </Container>
