@@ -16,6 +16,7 @@ export const marks: any = [
   {
     r_facilities_count: {
       title: "既存施設アカウント数",
+      num: 1,
       option: [
         {
           value: 1,
@@ -35,6 +36,7 @@ export const marks: any = [
   {
     r_frequency: {
       title: "頻度",
+      num: 1,
       option: [
         {
           value: 1,
@@ -60,22 +62,42 @@ export const marks: any = [
     },
   },
   {
-    r_corporate_insider: {
-      title: "社内関係者",
-      csp_num: 0,
-      csp_title: "サポート",
-      dev_num: 0,
-      dev_title: "開発",
-      csc_num: 0,
-      csc_title: "サクセス",
+    r_support: {
+      title: "サポート",
+      option: [
+        {
+          value: 1,
+          label: "影響小",
+        },
+        {
+          value: 2,
+          label: "そこそこ",
+        },
+        {
+          value: 3,
+          label: "影響大",
+        },
+      ],
     },
   },
   {
-    involved_ppl_object: [
-      { id: 0, name: "影響小" },
-      { id: 1, name: "そこそこ" },
-      { id: 2, name: "影響大" },
-    ],
+    r_developer: {
+      title: "開発",
+      option: [
+        {
+          value: 1,
+          label: "影響小",
+        },
+        {
+          value: 2,
+          label: "そこそこ",
+        },
+        {
+          value: 3,
+          label: "影響大",
+        },
+      ],
+    },
   },
   {
     i_user_spread_degrees: {

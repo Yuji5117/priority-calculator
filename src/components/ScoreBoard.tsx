@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { marks } from "../store/marks";
 
 interface PropsType {
-  priorityScore: number;
+  priorityScores: number[];
   priorityType: number;
   caluculatePriorityScore: (event: any) => void;
 }
@@ -19,6 +19,7 @@ const ScoreBoard = (props: PropsType) => {
             onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
             defaultValue={1}
+            value={props.priorityScores[0]}
             valueLabelDisplay="auto"
             name="既存施設"
             step={null}
@@ -32,6 +33,7 @@ const ScoreBoard = (props: PropsType) => {
           <Slider
             onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
+            value={props.priorityScores[1]}
             name="頻度"
             defaultValue={1}
             valueLabelDisplay="auto"
@@ -44,31 +46,40 @@ const ScoreBoard = (props: PropsType) => {
         <div>
           <Title>社内関係者:サポート</Title>
           <Slider
+            onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
+            value={props.priorityScores[2]}
+            name="サポート"
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            marks={marks[1].r_frequency.option}
+            marks={marks[2].r_support.option}
             min={1}
-            max={5}
+            max={3}
           />
         </div>
         <div>
           <Title>社内関係者:開発</Title>
           <Slider
+            onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
+            value={props.priorityScores[3]}
+            name="開発"
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
-            marks={marks[1].r_frequency.option}
+            marks={marks[3].r_developer.option}
             min={1}
-            max={5}
+            max={3}
           />
         </div>
         <div>
           <Title>ユーザー波及度</Title>
           <Slider
+            onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
+            value={props.priorityScores[4]}
+            name="ユーザー波及度"
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
@@ -80,7 +91,10 @@ const ScoreBoard = (props: PropsType) => {
         <div>
           <Title>その後の行動</Title>
           <Slider
+            onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
+            value={props.priorityScores[5]}
+            name="その後の行動"
             defaultValue={1}
             valueLabelDisplay="auto"
             step={null}
@@ -92,7 +106,10 @@ const ScoreBoard = (props: PropsType) => {
         <div>
           <Title>社外コミット</Title>
           <Slider
+            onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
+            value={props.priorityScores[6]}
+            name="社外コミット"
             defaultValue={0}
             valueLabelDisplay="auto"
             step={null}
@@ -104,7 +121,10 @@ const ScoreBoard = (props: PropsType) => {
         <div>
           <Title>事業戦略的観点</Title>
           <Slider
+            onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
+            value={props.priorityScores[7]}
+            name="事業戦略的観点"
             defaultValue={0}
             valueLabelDisplay="auto"
             step={null}
