@@ -109,8 +109,8 @@ const ScoreBoard = (props: PropsType) => {
             onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
             value={props.priorityScores[6]}
-            name="社外コミット"
             defaultValue={0}
+            name="社外コミット"
             valueLabelDisplay="auto"
             step={null}
             marks={marks[6].i_commit.option}
@@ -124,8 +124,8 @@ const ScoreBoard = (props: PropsType) => {
             onChange={props.caluculatePriorityScore}
             aria-label="Temperature"
             value={props.priorityScores[7]}
-            name="事業戦略的観点"
             defaultValue={0}
+            name="事業戦略的観点"
             valueLabelDisplay="auto"
             step={null}
             marks={marks[7].i_strategy.option}

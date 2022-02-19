@@ -15,7 +15,7 @@ const involved_ppl_options = [
 function App() {
   const [priorityScore, setPriorityScore] = useState<number>(1);
   const [priorityType, setPriorityType] = useState<number>(1);
-  const [priorityScores, setPriorityScores] = useState([
+  const [priorityScores, setPriorityScores] = useState<number[]>([
     1, 1, 1, 1, 1, 1, 0, 0,
   ]);
 
@@ -83,8 +83,10 @@ function App() {
     <Wrapper className="App">
       <Container>
         <Header
+          priorityScores={priorityScores}
           priorityScore={priorityScore}
           onChengePriorityType={onChengePriorityType}
+          getCorporateInsiderNum={getCorporateInsiderNum}
         />
         <ScoreBoard
           priorityScores={priorityScores}
