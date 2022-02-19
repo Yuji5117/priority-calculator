@@ -1,4 +1,4 @@
-import React from "react";
+import { HiClipboardCopy } from "react-icons/hi";
 import styled from "styled-components";
 
 interface PropsType {
@@ -31,9 +31,9 @@ const Header = ({ priorityScore }: PropsType) => {
         <Title>Priority Calculator</Title>
         <Content>
           <p>メリット量:{priorityScore}</p>
-          <button onClick={() => copyTextToClipboard(formatedAsMarkdown())}>
-            コピー
-          </button>
+          <CopyButton onClick={() => copyTextToClipboard(formatedAsMarkdown())}>
+            <HiClipboardCopy size={25} color={"#fff"} />
+          </CopyButton>
         </Content>
         <MenuTab>
           <TabItem>バグ改修</TabItem>
@@ -62,6 +62,20 @@ const Title = styled.h1`
 
 const Content = styled.div`
   display: flex;
+`;
+
+const CopyButton = styled.button`
+  background-color: pink;
+  border-radius: 5px;
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+
+  :hover > * {
+    color: red;
+  }
 `;
 
 const MenuTab = styled.div`
