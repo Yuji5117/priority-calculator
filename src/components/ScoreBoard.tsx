@@ -141,13 +141,13 @@ const ScoreBoard = (props: PropsType) => {
 export default ScoreBoard;
 
 const Wrapper = styled.div`
+  height: 470px;
   box-sizing: border-box;
-  /* background: #ffffff; */
-  background: pink;
+  overflow-y: scroll;
 `;
 
 const Container = styled.div`
-  padding: 20px 30px 0 30px;
+  padding: 20px 70px 20px 70px;
   background: #ffffff;
 `;
 

@@ -81,15 +81,17 @@ function App() {
 
   return (
     <Wrapper className="App">
-      <Header
-        priorityScore={priorityScore}
-        onChengePriorityType={onChengePriorityType}
-      />
-      <ScoreBoard
-        priorityScores={priorityScores}
-        priorityType={priorityType}
-        caluculatePriorityScore={caluculatePriorityScore}
-      />
+      <Container>
+        <Header
+          priorityScore={priorityScore}
+          onChengePriorityType={onChengePriorityType}
+        />
+        <ScoreBoard
+          priorityScores={priorityScores}
+          priorityType={priorityType}
+          caluculatePriorityScore={caluculatePriorityScore}
+        />
+      </Container>
     </Wrapper>
   );
 }
@@ -97,6 +99,11 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 600px;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
