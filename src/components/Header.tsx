@@ -87,6 +87,10 @@ const Title = styled.h1`
 const Content = styled.div`
   display: flex;
   align-items: center;
+
+  & * + * {
+    margin-left: 15px;
+  }
 `;
 
 const CopyButton = styled.button`
