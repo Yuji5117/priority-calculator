@@ -1,5 +1,8 @@
 import { HiClipboardCopy } from "react-icons/hi";
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 import styled from "styled-components";
+import { useState } from "react";
 
 interface PropsType {
   priorityScores: number[];
@@ -13,6 +16,7 @@ const Header = ({
   priorityScore,
   getCorporateInsiderNum,
 }: PropsType) => {
+  const [openTooltip, setOpenTooltip] = useState<boolean>(false);
   const copyTextToClipboard = (text: any): void => {
     navigator.clipboard.writeText(text);
   };
@@ -48,15 +52,38 @@ const Header = ({
     return text;
   };
 
+  const handleTooltipOpen = () => {
+    setOpenTooltip(true);
+  };
+
+  const handleTooltipClose = () => {
+    setOpenTooltip(false);
+  };
+
   return (
     <Wrapper>
       <Container>
         <Title>Priority Calculator</Title>
         <Content>
           <p>メリット量:{priorityScore}</p>
-          <CopyButton onClick={() => copyTextToClipboard(formatedAsMarkdown())}>
-            <HiClipboardCopy size={25} color={"#fff"} />
-          </CopyButton>
+          <Tooltip
+            PopperProps={{
+              disablePortal: true,
+            }}
+            title="コピーしました！"
+            open={openTooltip}
+            leaveDelay={1500}
+            onClose={handleTooltipClose}
+            disableFocusListener
+            disableTouchListener
+          >
+            <IconButton
+              color="primary"
+              onClick={() => copyTextToClipboard(formatedAsMarkdown())}
+            >
+              <HiClipboardCopy onClick={() => handleTooltipOpen()} size={25} />
+            </IconButton>
+          </Tooltip>
         </Content>
         <MenuTab>
           <TabItem>バグ改修</TabItem>
@@ -87,28 +114,6 @@ const Title = styled.h1`
 const Content = styled.div`
   display: flex;
   align-items: center;
-
-  & * + * {
-    margin-left: 15px;
-  }
-`;
-
-const CopyButton = styled.button`
-  background-color: pink;
-  border-radius: 5px;
-  padding: 5px;
-  width: 35px;
-  height: 35px;
-  border: none;
-  cursor: pointer;
-
-  :hover {
-    background-color: red;
-  }
-
-  :active {
-    background-color: pink;
-  }
 `;
 
 const MenuTab = styled.div`
