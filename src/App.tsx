@@ -14,10 +14,14 @@ const involved_ppl_options = [
 
 function App() {
   const [priorityScore, setPriorityScore] = useState<number>(1);
-  const [priorityType, setPriorityType] = useState<number>(1);
+  const [priorityType, setPriorityType] = useState<string>("1");
   const [priorityScores, setPriorityScores] = useState<number[]>([
-    1, 1, 1, 1, 1, 1, 0, 0,
+    1, 1, 1, 1, 1, 1, 0, 0, 1, 1,
   ]);
+
+  useEffect(() => {
+    setPriorityScores([1, 1, 1, 1, 1, 1, 0, 0, 1, 1]);
+  }, [priorityType]);
 
   useEffect(() => {
     const CorporateInsiderNum = getCorporateInsiderNum(
@@ -25,13 +29,22 @@ function App() {
       priorityScores[3]
     );
 
-    const sumScore =
-      (priorityScores[0] * priorityScores[1] + CorporateInsiderNum) *
-      (priorityScores[4] * priorityScores[5] +
-        priorityScores[6] +
-        priorityScores[7]);
+    let sumScore = 0;
+    if (priorityType === "1") {
+      sumScore =
+        (priorityScores[0] * priorityScores[1] + CorporateInsiderNum) *
+        (priorityScores[4] * priorityScores[5] +
+          priorityScores[6] +
+          priorityScores[7]);
+    } else if (priorityType === "2") {
+      sumScore =
+        (priorityScores[0] * priorityScores[1] + CorporateInsiderNum) *
+        (priorityScores[8] * priorityScores[9] +
+          priorityScores[6] +
+          priorityScores[7]);
+    }
     setPriorityScore(sumScore);
-  }, [priorityScores]);
+  }, [priorityScores, priorityType]);
 
   const getCorporateInsiderNum = (num1: number, num2: number) => {
     return involved_ppl_options[num1 - 1][num2 - 1];
@@ -72,10 +85,18 @@ function App() {
         priorityScores[7] = event.target.value;
         setPriorityScores([...priorityScores]);
         break;
+      case "影響あるユーザーの種類":
+        priorityScores[8] = event.target.value;
+        setPriorityScores([...priorityScores]);
+        break;
+      case "感情の変化":
+        priorityScores[9] = event.target.value;
+        setPriorityScores([...priorityScores]);
+        break;
     }
   };
 
-  const onChengePriorityType = (priorityType: number) => {
+  const onChangePriorityType = (e: any, priorityType: string): void => {
     setPriorityType(priorityType);
   };
 
@@ -85,7 +106,8 @@ function App() {
         <Header
           priorityScores={priorityScores}
           priorityScore={priorityScore}
-          onChengePriorityType={onChengePriorityType}
+          priorityType={priorityType}
+          onChangePriorityType={onChangePriorityType}
           getCorporateInsiderNum={getCorporateInsiderNum}
         />
         <ScoreBoard

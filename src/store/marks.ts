@@ -171,4 +171,42 @@ export const marks: any = [
       ],
     },
   },
+  {
+    i_affected_users_type: {
+      title: "影響あるユーザーの種類（管理職/事務、一般職員、保護者/子ども）",
+      option: [
+        {
+          value: 1,
+          label: "1組",
+        },
+        {
+          value: 3,
+          label: "2組",
+        },
+        {
+          value: 5,
+          label: "3組",
+        },
+      ],
+    },
+  },
+  {
+    i_emotion_change: {
+      title: "感情の変化",
+      option: [
+        {
+          value: 1,
+          label: "まぁ嬉しい",
+        },
+        {
+          value: 3,
+          label: "そこそこ嬉しい",
+        },
+        {
+          value: 5,
+          label: "とても嬉しい",
+        },
+      ],
+    },
+  },
 ];
