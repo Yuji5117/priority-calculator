@@ -5,6 +5,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import styled from "styled-components";
 import { useState } from "react";
+import { Box } from "@material-ui/core";
 
 interface PropsType {
   priorityScores: number[];
@@ -106,10 +107,12 @@ const Header = ({
           </Tooltip>
         </Content>
       </Container>
-      <Tabs onChange={onChangePriorityType}>
-        <Tab value="1" label="バグ改修" />
-        <Tab value="2" label="機能改善" />
-      </Tabs>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs value={priorityType} onChange={onChangePriorityType} centered>
+          <Tab value="1" label="バグ改修" />
+          <Tab value="2" label="機能改善" />
+        </Tabs>
+      </Box>
     </Wrapper>
   );
 };
@@ -118,12 +121,11 @@ export default Header;
 
 const Wrapper = styled.header`
   box-sizing: border-box;
-  /* background: #1a8cd8; */
-  background: skyblue;
 `;
 
 const Container = styled.header`
   padding: 20px 30px 0 30px;
+  background: skyblue;
 `;
 
 const Title = styled.h1`
@@ -134,21 +136,4 @@ const Title = styled.h1`
 const Content = styled.div`
   display: flex;
   align-items: center;
-`;
-
-const MenuTab = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-bottom: 5px;
-
-  & * + * {
-    margin-left: 10px;
-  }
-`;
-
-const TabItem = styled.div`
-  padding: 10px 40px;
-  border-bottom: 1px solid;
-  border-radius: 15px 15px 0 0;
-  color: #ffffff;
 `;
