@@ -1,8 +1,8 @@
+import styled from "styled-components";
+import { Box } from "@material-ui/core";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import styled from "styled-components";
-import { useState } from "react";
-import { Box } from "@material-ui/core";
+
 import PriorityCopy from "./PriorityCopy";
 
 interface PropsType {
@@ -20,7 +20,6 @@ const Header = ({
   onChangePriorityType,
   getCorporateInsiderNum,
 }: PropsType) => {
-
   const formatedAsMarkdown = (): string => {
     let text = "";
     text += "## メリット量\n";
