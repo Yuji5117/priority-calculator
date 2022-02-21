@@ -1,12 +1,9 @@
-import { HiClipboardCopy } from "react-icons/hi";
-import { IconContext } from "react-icons";
-import IconButton from "@material-ui/core/IconButton";
-import Tooltip from "@mui/material/Tooltip";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import styled from "styled-components";
 import { useState } from "react";
 import { Box } from "@material-ui/core";
+import PriorityCopy from "./PriorityCopy";
 
 interface PropsType {
   priorityScores: number[];
@@ -23,10 +20,6 @@ const Header = ({
   onChangePriorityType,
   getCorporateInsiderNum,
 }: PropsType) => {
-  const [openTooltip, setOpenTooltip] = useState<boolean>(false);
-  const copyTextToClipboard = (text: any): void => {
-    navigator.clipboard.writeText(text);
-  };
 
   const formatedAsMarkdown = (): string => {
     let text = "";
@@ -74,42 +67,13 @@ const Header = ({
     return text;
   };
 
-  const handleTooltipOpen = () => {
-    setOpenTooltip(true);
-  };
-
-  const handleTooltipClose = () => {
-    setOpenTooltip(false);
-  };
-
   return (
     <Wrapper>
       <Container>
         <Title>Priority Calculator</Title>
         <Content>
           <Text>メリット量:{priorityScore}</Text>
-          <Tooltip
-            PopperProps={{
-              disablePortal: true,
-            }}
-            title="コピーしました！"
-            open={openTooltip}
-            leaveDelay={1500}
-            onClose={handleTooltipClose}
-            disableFocusListener
-            disableTouchListener
-          >
-            <IconButton
-              onClick={() => copyTextToClipboard(formatedAsMarkdown())}
-            >
-              <IconContext.Provider value={{ color: "#ffffff" }}>
-                <HiClipboardCopy
-                  onClick={() => handleTooltipOpen()}
-                  size={25}
-                />
-              </IconContext.Provider>
-            </IconButton>
-          </Tooltip>
+          <PriorityCopy formatedAsMarkdown={formatedAsMarkdown} />
         </Content>
       </Container>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
