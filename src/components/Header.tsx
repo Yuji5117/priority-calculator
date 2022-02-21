@@ -1,4 +1,5 @@
 import { HiClipboardCopy } from "react-icons/hi";
+import { IconContext } from "react-icons";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Tabs from "@mui/material/Tabs";
@@ -86,7 +87,7 @@ const Header = ({
       <Container>
         <Title>Priority Calculator</Title>
         <Content>
-          <p>メリット量:{priorityScore}</p>
+          <Text>メリット量:{priorityScore}</Text>
           <Tooltip
             PopperProps={{
               disablePortal: true,
@@ -99,10 +100,14 @@ const Header = ({
             disableTouchListener
           >
             <IconButton
-              color="primary"
               onClick={() => copyTextToClipboard(formatedAsMarkdown())}
             >
-              <HiClipboardCopy onClick={() => handleTooltipOpen()} size={25} />
+              <IconContext.Provider value={{ color: "#ffffff" }}>
+                <HiClipboardCopy
+                  onClick={() => handleTooltipOpen()}
+                  size={25}
+                />
+              </IconContext.Provider>
             </IconButton>
           </Tooltip>
         </Content>
@@ -123,17 +128,23 @@ const Wrapper = styled.header`
   box-sizing: border-box;
 `;
 
-const Container = styled.header`
-  padding: 20px 30px 0 30px;
-  background: skyblue;
+const Container = styled.div`
+  padding: 20px 30px 5px 30px;
+  background: #2f99ce;
 `;
 
 const Title = styled.h1`
   margin: 0;
   font-size: 24px;
+  color: #ffffff;
 `;
 
 const Content = styled.div`
   display: flex;
   align-items: center;
+`;
+
+const Text = styled.p`
+  color: #ffffff;
+  margin-right: 6px;
 `;
