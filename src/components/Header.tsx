@@ -24,7 +24,11 @@ const Header = ({
     let text = "";
     text += "## メリット量\n";
     text += "\n";
-    text += `(施設アカウント数×頻度+社内関係者)×(関係者×感情の変化+コミット有無+事業戦略上の必要)=メリット量`;
+    if (priorityType === "1") {
+      text += `(施設アカウント数×頻度+社内関係者)×(関係者×その後の行動+コミット有無+事業戦略上の必要)=メリット量`;
+    } else if (priorityType === "2") {
+      text += `(施設アカウント数×頻度+社内関係者)×(関係者×感情の変化+コミット有無+事業戦略上の必要)=メリット量`;
+    }
     text += "\n";
     if (priorityType === "1") {
       text += `(${priorityScores[0]}×${
@@ -57,7 +61,7 @@ const Header = ({
       text += `| ユーザー波及度 | ${priorityScores[4]} |\n`;
       text += `| その後の行動 | ${priorityScores[5]} |\n`;
     } else if (priorityType === "2") {
-      text += `| ユーザー波及度 | ${priorityScores[8]} |\n`;
+      text += `| ユーザー波及度（管理職/事務、一般職員、保護者/子ども） | ${priorityScores[8]} |\n`;
       text += `| 感情の変化 | ${priorityScores[9]} |\n`;
     }
     text += `| 社外コミット | ${priorityScores[6]} |\n`;
