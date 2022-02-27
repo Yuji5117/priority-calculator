@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import "./App.css";
 import Header from "./components/Header";
 import ScoreBoard from "./components/ScoreBoard";
 

@@ -27,6 +27,7 @@ const FunctionalImprovementSliders = ({
           marks={marks[0].r_facilities_count.option}
           min={1}
           max={5}
+          color="secondary"
         />
       </div>
       <div>
@@ -42,10 +43,11 @@ const FunctionalImprovementSliders = ({
           marks={marks[1].r_frequency.option}
           min={1}
           max={5}
+          color="secondary"
         />
       </div>
       <div>
-        <Title>社内関係者:サポート</Title>
+        <Title>社内関係者:サクセス</Title>
         <Slider
           onChange={caluculatePriorityScore}
           aria-label="Temperature"
@@ -57,6 +59,7 @@ const FunctionalImprovementSliders = ({
           marks={marks[2].r_support.option}
           min={1}
           max={3}
+          color="secondary"
         />
       </div>
       <div>
@@ -72,6 +75,7 @@ const FunctionalImprovementSliders = ({
           marks={marks[3].r_developer.option}
           min={1}
           max={3}
+          color="secondary"
         />
       </div>
       <div>
@@ -89,6 +93,7 @@ const FunctionalImprovementSliders = ({
           marks={marks[8].i_affected_users_type.option}
           min={1}
           max={5}
+          color="secondary"
         />
       </div>
       <div>
@@ -104,6 +109,7 @@ const FunctionalImprovementSliders = ({
           marks={marks[9].i_emotion_change.option}
           min={1}
           max={5}
+          color="secondary"
         />
       </div>
       <div>
@@ -119,6 +125,7 @@ const FunctionalImprovementSliders = ({
           marks={marks[6].i_commit.option}
           min={0}
           max={25}
+          color="secondary"
         />
       </div>
       <div>
@@ -134,6 +141,7 @@ const FunctionalImprovementSliders = ({
           marks={marks[7].i_strategy.option}
           min={0}
           max={10}
+          color="secondary"
         />
       </div>
     </>
@@ -143,5 +151,7 @@ const FunctionalImprovementSliders = ({
 export default FunctionalImprovementSliders;
 
 const Title = styled.h2`
+  display: inline-block;
   font-size: 18px;
+  border-bottom: 3px double #dcafe2;
 `;

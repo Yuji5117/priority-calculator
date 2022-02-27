@@ -141,5 +141,7 @@ const ScoreSliders = ({
 export default ScoreSliders;
 
 const Title = styled.h2`
+  display: inline-block;
   font-size: 18px;
+  border-bottom: 3px double #2f99ce;
 `;
