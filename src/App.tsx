@@ -100,7 +100,7 @@ function App() {
   };
 
   return (
-    <Wrapper className="App">
+    <Wrapper>
       <Container>
         <Header
           priorityScores={priorityScores}
@@ -127,6 +127,7 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
+  height: 600px;
   display: flex;
   flex-direction: column;
 `;
