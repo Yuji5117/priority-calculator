@@ -20,10 +20,11 @@ const FunctionalImprovementSliders = ({
         <Title>{marks[0].r_facilities_count.title}</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
+          aria-label="Small"
           defaultValue={1}
           value={priorityScores[0]}
           valueLabelDisplay="auto"
+          size="small"
           name="既存施設"
           step={null}
           marks={marks[0].r_facilities_count.option}
@@ -39,6 +40,7 @@ const FunctionalImprovementSliders = ({
           aria-label="Temperature"
           value={priorityScores[1]}
           name="頻度"
+          size="small"
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
@@ -55,6 +57,7 @@ const FunctionalImprovementSliders = ({
           aria-label="Temperature"
           value={priorityScores[2]}
           name="サポート"
+          size="small"
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
@@ -71,6 +74,7 @@ const FunctionalImprovementSliders = ({
           aria-label="Temperature"
           value={priorityScores[3]}
           name="開発"
+          size="small"
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
@@ -92,6 +96,7 @@ const FunctionalImprovementSliders = ({
           aria-label="Temperature"
           value={priorityScores[8]}
           name="影響あるユーザーの種類"
+          size="small"
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
@@ -108,6 +113,7 @@ const FunctionalImprovementSliders = ({
           aria-label="Temperature"
           value={priorityScores[9]}
           name="感情の変化"
+          size="small"
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
@@ -125,6 +131,7 @@ const FunctionalImprovementSliders = ({
           value={priorityScores[6]}
           defaultValue={0}
           name="社外コミット"
+          size="small"
           valueLabelDisplay="auto"
           step={null}
           marks={marks[6].i_commit.option}
@@ -141,6 +148,7 @@ const FunctionalImprovementSliders = ({
           value={priorityScores[7]}
           defaultValue={0}
           name="事業戦略的観点"
+          size="small"
           valueLabelDisplay="auto"
           step={null}
           marks={marks[7].i_strategy.option}
@@ -157,7 +165,7 @@ export default FunctionalImprovementSliders;
 
 const Title = styled.h2`
   display: inline-block;
-  font-size: 18px;
+  font-size: 16px;
   border-bottom: 3px double #dcafe2;
 `;
 

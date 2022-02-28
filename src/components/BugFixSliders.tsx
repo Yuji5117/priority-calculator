@@ -23,6 +23,7 @@ const ScoreSliders = ({
           value={priorityScores[0]}
           valueLabelDisplay="auto"
           name="既存施設"
+          size="small"
           step={null}
           marks={marks[0].r_facilities_count.option}
           min={1}
@@ -36,6 +37,7 @@ const ScoreSliders = ({
           aria-label="Temperature"
           value={priorityScores[1]}
           name="頻度"
+          size="small"
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
@@ -51,6 +53,7 @@ const ScoreSliders = ({
           aria-label="Temperature"
           value={priorityScores[2]}
           name="サポート"
+          size="small"
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
@@ -66,6 +69,7 @@ const ScoreSliders = ({
           aria-label="Temperature"
           value={priorityScores[3]}
           name="開発"
+          size="small"
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
@@ -81,6 +85,7 @@ const ScoreSliders = ({
           aria-label="Temperature"
           value={priorityScores[4]}
           name="ユーザー波及度"
+          size="small"
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
@@ -96,6 +101,7 @@ const ScoreSliders = ({
           aria-label="Temperature"
           value={priorityScores[5]}
           name="その後の行動"
+          size="small"
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
@@ -112,6 +118,7 @@ const ScoreSliders = ({
           value={priorityScores[6]}
           defaultValue={0}
           name="社外コミット"
+          size="small"
           valueLabelDisplay="auto"
           step={null}
           marks={marks[6].i_commit.option}
@@ -127,6 +134,7 @@ const ScoreSliders = ({
           value={priorityScores[7]}
           defaultValue={0}
           name="事業戦略的観点"
+          size="small"
           valueLabelDisplay="auto"
           step={null}
           marks={marks[7].i_strategy.option}
@@ -142,6 +150,6 @@ export default ScoreSliders;
 
 const Title = styled.h2`
   display: inline-block;
-  font-size: 18px;
+  font-size: 16px;
   border-bottom: 3px double #2f99ce;
 `;
