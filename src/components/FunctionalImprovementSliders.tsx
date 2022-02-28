@@ -2,6 +2,8 @@ import { Slider } from "@material-ui/core";
 import styled from "styled-components";
 
 import { marks } from "../store/marks";
+import Tooltip from "@mui/material/Tooltip";
+import InfoIcon from "@mui/icons-material/Info";
 
 interface PropsType {
   priorityScores: number[];
@@ -79,9 +81,12 @@ const FunctionalImprovementSliders = ({
         />
       </div>
       <div>
-        <Title>
-          影響あるユーザーの種類（管理職/事務、一般職員、保護者/子ども）
-        </Title>
+        <TitleContainer>
+          <Title>影響あるユーザーの種類</Title>
+          <Tooltip title="（管理職/事務、一般職員、保護者/子ども）" arrow>
+            <InfoIcon color="action" />
+          </Tooltip>
+        </TitleContainer>
         <Slider
           onChange={caluculatePriorityScore}
           aria-label="Temperature"
@@ -154,4 +159,13 @@ const Title = styled.h2`
   display: inline-block;
   font-size: 18px;
   border-bottom: 3px double #dcafe2;
+`;
+
+const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  & > * {
+    padding-right: 8px;
+  }
 `;
