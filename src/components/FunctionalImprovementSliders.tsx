@@ -16,7 +16,7 @@ const FunctionalImprovementSliders = ({
 }: PropsType) => {
   return (
     <>
-      <div>
+      <Item>
         <Title>{marks[0].r_facilities_count.title}</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -32,8 +32,8 @@ const FunctionalImprovementSliders = ({
           max={5}
           color="secondary"
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>頻度</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -49,8 +49,8 @@ const FunctionalImprovementSliders = ({
           max={5}
           color="secondary"
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>社内関係者:サクセス</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -66,8 +66,8 @@ const FunctionalImprovementSliders = ({
           max={3}
           color="secondary"
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>社内関係者:開発</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -83,8 +83,8 @@ const FunctionalImprovementSliders = ({
           max={3}
           color="secondary"
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <TitleContainer>
           <Title>影響あるユーザーの種類</Title>
           <Tooltip title="（管理職/事務、一般職員、保護者/子ども）" arrow>
@@ -105,8 +105,8 @@ const FunctionalImprovementSliders = ({
           max={5}
           color="secondary"
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>感情の変化</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -122,8 +122,8 @@ const FunctionalImprovementSliders = ({
           max={5}
           color="secondary"
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>社外コミット</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -139,8 +139,8 @@ const FunctionalImprovementSliders = ({
           max={25}
           color="secondary"
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>事業戦略的観点</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -156,17 +156,21 @@ const FunctionalImprovementSliders = ({
           max={10}
           color="secondary"
         />
-      </div>
+      </Item>
     </>
   );
 };
 
 export default FunctionalImprovementSliders;
 
+const Item = styled.div`
+  margin-bottom: 20px;
+`;
+
 const Title = styled.h2`
   display: inline-block;
   font-size: 16px;
-  border-bottom: 3px double #dcafe2;
+  border-bottom: 2px double #72007c;
 `;
 
 const TitleContainer = styled.div`

@@ -14,7 +14,7 @@ const ScoreSliders = ({
 }: PropsType) => {
   return (
     <>
-      <div>
+      <Item>
         <Title>{marks[0].r_facilities_count.title}</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -29,8 +29,8 @@ const ScoreSliders = ({
           min={1}
           max={5}
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>頻度</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -45,8 +45,8 @@ const ScoreSliders = ({
           min={1}
           max={5}
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>社内関係者:サポート</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -61,8 +61,8 @@ const ScoreSliders = ({
           min={1}
           max={3}
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>社内関係者:開発</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -77,8 +77,8 @@ const ScoreSliders = ({
           min={1}
           max={3}
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>ユーザー波及度</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -93,8 +93,8 @@ const ScoreSliders = ({
           min={1}
           max={5}
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>その後の行動</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -109,8 +109,8 @@ const ScoreSliders = ({
           min={1}
           max={5}
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>社外コミット</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -125,8 +125,8 @@ const ScoreSliders = ({
           min={0}
           max={25}
         />
-      </div>
-      <div>
+      </Item>
+      <Item>
         <Title>事業戦略的観点</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -141,15 +141,19 @@ const ScoreSliders = ({
           min={0}
           max={10}
         />
-      </div>
+      </Item>
     </>
   );
 };
 
 export default ScoreSliders;
 
+const Item = styled.div`
+  margin-bottom: 20px;
+`;
+
 const Title = styled.h2`
   display: inline-block;
   font-size: 16px;
-  border-bottom: 3px double #2f99ce;
+  border-bottom: 2px double #004170;
 `;
