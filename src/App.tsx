@@ -5,7 +5,7 @@ import ScoreBoard from "./components/ScoreBoard";
 
 import { marks } from "./store/marks";
 
-const involved_ppl_options = [
+const involvedPplOptions = [
   [0, 1, 2],
   [1, 3, 4],
   [2, 4, 5],
@@ -46,7 +46,7 @@ function App() {
   }, [priorityScores, priorityType]);
 
   const getCorporateInsiderNum = (num1: number, num2: number) => {
-    return involved_ppl_options[num1 - 1][num2 - 1];
+    return involvedPplOptions[num1 - 1][num2 - 1];
   };
 
   const caluculatePriorityScore = (event: any) => {
