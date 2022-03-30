@@ -20,10 +20,12 @@ const Header = ({
   onChangePriorityType,
   getCorporateInsiderNum,
 }: PropsType) => {
-  const formatedAsMarkdown = (): string => {
-    let text = "";
-    text += "## メリット量\n";
-    text += "\n";
+  const createPriorityScoreFormula = (
+    text: string,
+    priorityType: string,
+    priorityScores: number[],
+    getCorporateInsiderNum: (num1: number, num2: number) => number
+  ): string => {
     if (priorityType === "1") {
       text += `(施設アカウント数×頻度+社内関係者)×(関係者×その後の行動+社外コミット有無+事業戦略的観点)=メリット量`;
     } else if (priorityType === "2") {
@@ -47,6 +49,16 @@ const Header = ({
         priorityScores[7]
       })=${priorityScore}`;
     }
+
+    return text;
+  };
+
+  const createPriorityScoreBoard = (
+    text: string,
+    priorityType: string,
+    priorityScores: number[],
+    getCorporateInsiderNum: (num1: number, num2: number) => number
+  ): string => {
     text += "\n";
     text += "\n";
     text += "| name | value |\n";
@@ -67,6 +79,27 @@ const Header = ({
     text += `| 社外コミット | ${priorityScores[6]} |\n`;
     text += `| 事業戦略的観点 | ${priorityScores[7]} |\n`;
     text += "| **total** | **" + priorityScore + "** |\n";
+
+    return text;
+  };
+
+  const generateFormatedTextAsMarkdown = (): string => {
+    let text = "";
+    text += "## メリット量\n";
+    text += "\n";
+
+    text = createPriorityScoreFormula(
+      text,
+      priorityType,
+      priorityScores,
+      getCorporateInsiderNum
+    );
+    text = createPriorityScoreBoard(
+      text,
+      priorityType,
+      priorityScores,
+      getCorporateInsiderNum
+    );
     return text;
   };
 
@@ -76,7 +109,9 @@ const Header = ({
         <Title>Priority Calculator</Title>
         <Content>
           <Text>メリット量:{priorityScore}</Text>
-          <PriorityCopy formatedAsMarkdown={formatedAsMarkdown} />
+          <PriorityCopy
+            generateFormatedTextAsMarkdown={generateFormatedTextAsMarkdown}
+          />
         </Content>
       </Container>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
