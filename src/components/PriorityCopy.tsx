@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import { HiClipboardCopy } from "react-icons/hi";
-import { IconContext } from "react-icons";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@mui/material/Tooltip";
+import { HiClipboardCopy } from "react-icons/hi";
+import { IconContext } from "react-icons";
 
 interface PropsType {
   generateFormatedTextAsMarkdown: () => string;

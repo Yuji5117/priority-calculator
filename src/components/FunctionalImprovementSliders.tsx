@@ -1,9 +1,9 @@
+import InfoIcon from "@mui/icons-material/Info";
+import Tooltip from "@mui/material/Tooltip";
 import { Slider } from "@material-ui/core";
 import styled from "styled-components";
 
 import { marks } from "../store/marks";
-import Tooltip from "@mui/material/Tooltip";
-import InfoIcon from "@mui/icons-material/Info";
 
 interface PropsType {
   priorityScores: number[];
