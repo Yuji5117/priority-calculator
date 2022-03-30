@@ -1,9 +1,10 @@
 interface Marks {
-  r_facilities_count: RFacilitiesCount;
+  [key: string]: RFacilitiesCount;
 }
 
 interface RFacilitiesCount {
   title: string;
+  num?: number;
   option: Option[];
 }
 
@@ -12,7 +13,7 @@ interface Option {
   label: string;
 }
 
-export const marks: any = [
+export const marks: Marks[] = [
   {
     r_facilities_count: {
       title: "既存施設アカウント数",
