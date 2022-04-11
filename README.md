@@ -23,13 +23,19 @@ git clone https://github.com/Yuji5117/priority-calculator.git
 
 7. 画面右上から拡張機能一覧ポップアップを表示し、本拡張機能をピン留めする
 
+![Screen Shot 2022-04-12 at 8 19 05](https://user-images.githubusercontent.com/50049575/162848567-7f3076a5-a2d0-461c-8578-57893b7ce936.png)
 
 
 ## How to use
 
+
 1. タブ切り替えから、issueの種類を選択（バグ改修 or 機能改善）
 2. 任意のスライダーを調整する
 3. 画面上部のメモアイコンを押下し、Markdown形式でクリップボードにコピペする
+
+
+---
+![Screen Shot 2022-04-12 at 8 17 51](https://user-images.githubusercontent.com/50049575/162848415-a80bf4ef-7a14-4e53-97cc-1bdd14ab9d3a.png)
 
 
 ## Develop Setup
