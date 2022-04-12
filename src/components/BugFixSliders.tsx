@@ -18,7 +18,6 @@ const ScoreSliders = ({
         <Title>{marks[0].r_facilities_count.title}</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           defaultValue={1}
           value={priorityScores[0]}
           valueLabelDisplay="auto"
@@ -34,7 +33,6 @@ const ScoreSliders = ({
         <Title>頻度</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[1]}
           name="頻度"
           size="small"
@@ -50,7 +48,6 @@ const ScoreSliders = ({
         <Title>社内関係者:サポート</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[2]}
           name="サポート"
           size="small"
@@ -66,7 +63,6 @@ const ScoreSliders = ({
         <Title>社内関係者:開発</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[3]}
           name="開発"
           size="small"
@@ -82,7 +78,6 @@ const ScoreSliders = ({
         <Title>ユーザー波及度</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[4]}
           name="ユーザー波及度"
           size="small"
@@ -98,7 +93,6 @@ const ScoreSliders = ({
         <Title>その後の行動</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[5]}
           name="その後の行動"
           size="small"
@@ -114,7 +108,6 @@ const ScoreSliders = ({
         <Title>社外コミット</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[6]}
           defaultValue={0}
           name="社外コミット"
@@ -130,7 +123,6 @@ const ScoreSliders = ({
         <Title>事業戦略的観点</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[7]}
           defaultValue={0}
           name="事業戦略的観点"

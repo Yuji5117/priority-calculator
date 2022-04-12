@@ -20,7 +20,6 @@ const FunctionalImprovementSliders = ({
         <Title>{marks[0].r_facilities_count.title}</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Small"
           defaultValue={1}
           value={priorityScores[0]}
           valueLabelDisplay="auto"
@@ -37,7 +36,6 @@ const FunctionalImprovementSliders = ({
         <Title>頻度</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[1]}
           name="頻度"
           size="small"
@@ -54,7 +52,6 @@ const FunctionalImprovementSliders = ({
         <Title>社内関係者:サクセス</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[2]}
           name="サポート"
           size="small"
@@ -71,7 +68,6 @@ const FunctionalImprovementSliders = ({
         <Title>社内関係者:開発</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[3]}
           name="開発"
           size="small"
@@ -93,7 +89,6 @@ const FunctionalImprovementSliders = ({
         </TitleContainer>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[8]}
           name="影響あるユーザーの種類"
           size="small"
@@ -110,7 +105,6 @@ const FunctionalImprovementSliders = ({
         <Title>感情の変化</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[9]}
           name="感情の変化"
           size="small"
@@ -127,7 +121,6 @@ const FunctionalImprovementSliders = ({
         <Title>社外コミット</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[6]}
           defaultValue={0}
           name="社外コミット"
@@ -144,7 +137,6 @@ const FunctionalImprovementSliders = ({
         <Title>事業戦略的観点</Title>
         <Slider
           onChange={caluculatePriorityScore}
-          aria-label="Temperature"
           value={priorityScores[7]}
           defaultValue={0}
           name="事業戦略的観点"
