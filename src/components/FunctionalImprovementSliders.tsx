@@ -14,9 +14,41 @@ const FunctionalImprovementSliders = ({
   priorityScores,
   caluculatePriorityScore,
 }: PropsType) => {
+  const SliderTitle = ({ title }: { title: string }) => {
+    if (title === "影響あるユーザーの種類") {
+      return (
+        <TitleContainer>
+          <Title>{title}</Title>
+          <Tooltip title="（管理職/事務、一般職員、保護者/子ども）" arrow>
+            <InfoIcon color="action" />
+          </Tooltip>
+        </TitleContainer>
+      );
+    }
+    return <Title>{title}</Title>;
+  };
+
   return (
     <>
-      <Item>
+      {marksForFunctionalImporovement.map((mark, index) => (
+        <Item key={mark.id}>
+          <SliderTitle title={mark.title} />
+          <Slider
+            onChange={caluculatePriorityScore}
+            defaultValue={1}
+            value={priorityScores[index]}
+            valueLabelDisplay="auto"
+            name={mark.name}
+            size="small"
+            step={null}
+            marks={mark.option}
+            min={mark.range.min}
+            max={mark.range.max}
+            color="secondary"
+          />
+        </Item>
+      ))}
+      {/* <Item>
         <Title>{marksForFunctionalImporovement[0].title}</Title>
         <Slider
           onChange={caluculatePriorityScore}
@@ -148,7 +180,7 @@ const FunctionalImprovementSliders = ({
           max={10}
           color="secondary"
         />
-      </Item>
+      </Item> */}
     </>
   );
 };
