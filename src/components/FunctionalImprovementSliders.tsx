@@ -3,7 +3,7 @@ import Tooltip from "@mui/material/Tooltip";
 import { Slider } from "@material-ui/core";
 import styled from "styled-components";
 
-import { marks } from "../store/marks";
+import { marksForFunctionalImporovement } from "../store/marks";
 
 interface PropsType {
   priorityScores: number[];
@@ -17,7 +17,7 @@ const FunctionalImprovementSliders = ({
   return (
     <>
       <Item>
-        <Title>{marks[0].r_facilities_count.title}</Title>
+        <Title>{marksForFunctionalImporovement[0].title}</Title>
         <Slider
           onChange={caluculatePriorityScore}
           defaultValue={1}
@@ -26,7 +26,7 @@ const FunctionalImprovementSliders = ({
           size="small"
           name="既存施設"
           step={null}
-          marks={marks[0].r_facilities_count.option}
+          marks={marksForFunctionalImporovement[0].option}
           min={1}
           max={5}
           color="secondary"
@@ -42,7 +42,7 @@ const FunctionalImprovementSliders = ({
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
-          marks={marks[1].r_frequency.option}
+          marks={marksForFunctionalImporovement[1].option}
           min={1}
           max={5}
           color="secondary"
@@ -58,7 +58,7 @@ const FunctionalImprovementSliders = ({
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
-          marks={marks[2].r_support.option}
+          marks={marksForFunctionalImporovement[2].option}
           min={1}
           max={3}
           color="secondary"
@@ -74,7 +74,7 @@ const FunctionalImprovementSliders = ({
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
-          marks={marks[3].r_developer.option}
+          marks={marksForFunctionalImporovement[3].option}
           min={1}
           max={3}
           color="secondary"
@@ -95,7 +95,7 @@ const FunctionalImprovementSliders = ({
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
-          marks={marks[8].i_affected_users_type.option}
+          marks={marksForFunctionalImporovement[8].option}
           min={1}
           max={5}
           color="secondary"
@@ -111,7 +111,7 @@ const FunctionalImprovementSliders = ({
           defaultValue={1}
           valueLabelDisplay="auto"
           step={null}
-          marks={marks[9].i_emotion_change.option}
+          marks={marksForFunctionalImporovement[9].option}
           min={1}
           max={5}
           color="secondary"
@@ -127,7 +127,7 @@ const FunctionalImprovementSliders = ({
           size="small"
           valueLabelDisplay="auto"
           step={null}
-          marks={marks[6].i_commit.option}
+          marks={marksForFunctionalImporovement[6].option}
           min={0}
           max={25}
           color="secondary"
@@ -143,7 +143,7 @@ const FunctionalImprovementSliders = ({
           size="small"
           valueLabelDisplay="auto"
           step={null}
-          marks={marks[7].i_strategy.option}
+          marks={marksForFunctionalImporovement[7].option}
           min={0}
           max={10}
           color="secondary"

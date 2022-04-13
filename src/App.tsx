@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import ScoreBoard from "./components/ScoreBoard";
 import Header from "./components/Header";
-import { marks } from "./store/marks";
 
 const involvedPplOptions = [
   [0, 1, 2],
