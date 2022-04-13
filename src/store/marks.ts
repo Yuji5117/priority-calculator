@@ -1,3 +1,8 @@
+interface Option {
+  value: number;
+  label: string;
+}
+
 interface Marks {
   id: number;
   title: string;
@@ -8,11 +13,6 @@ interface Marks {
   };
   num?: number;
   option: Option[];
-}
-
-interface Option {
-  value: number;
-  label: string;
 }
 
 export const marksForBugFix: Marks[] = [
