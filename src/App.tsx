@@ -51,7 +51,6 @@ function App() {
   };
 
   const caluculatePriorityScore = (event: any) => {
-    console.log(marks[0].r_facilities_count.num);
     switch (event.target.name) {
       case "既存施設":
         priorityScores[0] = event.target.value;
