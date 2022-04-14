@@ -15,11 +15,11 @@ function App() {
   const [priorityScore, setPriorityScore] = useState<number>(1);
   const [priorityType, setPriorityType] = useState<string>("1");
   const [priorityScores, setPriorityScores] = useState<number[]>([
-    1, 1, 1, 1, 1, 1, 0, 0, 1, 1,
+    1, 1, 1, 1, 1, 1, 0, 0,
   ]);
 
   useEffect(() => {
-    setPriorityScores([1, 1, 1, 1, 1, 1, 0, 0, 1, 1]);
+    setPriorityScores([1, 1, 1, 1, 1, 1, 0, 0]);
   }, [priorityType]);
 
   useEffect(() => {
@@ -28,20 +28,11 @@ function App() {
       priorityScores[3]
     );
 
-    let sumScore = 0;
-    if (priorityType === "1") {
-      sumScore =
-        (priorityScores[0] * priorityScores[1] + CorporateInsiderNum) *
-        (priorityScores[4] * priorityScores[5] +
-          priorityScores[6] +
-          priorityScores[7]);
-    } else if (priorityType === "2") {
-      sumScore =
-        (priorityScores[0] * priorityScores[1] + CorporateInsiderNum) *
-        (priorityScores[8] * priorityScores[9] +
-          priorityScores[6] +
-          priorityScores[7]);
-    }
+    const sumScore =
+      (priorityScores[0] * priorityScores[1] + CorporateInsiderNum) *
+      (priorityScores[4] * priorityScores[5] +
+        priorityScores[6] +
+        priorityScores[7]);
     setPriorityScore(sumScore);
   }, [priorityScores, priorityType]);
 
@@ -68,10 +59,12 @@ function App() {
         setPriorityScores([...priorityScores]);
         break;
       case "ユーザー波及度":
+      case "影響あるユーザーの種類":
         priorityScores[4] = event.target.value;
         setPriorityScores([...priorityScores]);
         break;
       case "その後の行動":
+      case "感情の変化":
         priorityScores[5] = event.target.value;
         setPriorityScores([...priorityScores]);
         break;
@@ -81,14 +74,6 @@ function App() {
         break;
       case "事業戦略的観点":
         priorityScores[7] = event.target.value;
-        setPriorityScores([...priorityScores]);
-        break;
-      case "影響あるユーザーの種類":
-        priorityScores[8] = event.target.value;
-        setPriorityScores([...priorityScores]);
-        break;
-      case "感情の変化":
-        priorityScores[9] = event.target.value;
         setPriorityScores([...priorityScores]);
         break;
     }

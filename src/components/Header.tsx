@@ -44,8 +44,8 @@ const Header = ({
       text += `(${priorityScores[0]}×${
         priorityScores[1]
       }+${getCorporateInsiderNum(priorityScores[2], priorityScores[3])})×(${
-        priorityScores[8]
-      }×${priorityScores[9]}+${priorityScores[6]}+${
+        priorityScores[4]
+      }×${priorityScores[5]}+${priorityScores[6]}+${
         priorityScores[7]
       })=${priorityScore}`;
     }
@@ -73,8 +73,8 @@ const Header = ({
       text += `| ユーザー波及度 | ${priorityScores[4]} |\n`;
       text += `| その後の行動 | ${priorityScores[5]} |\n`;
     } else if (priorityType === "2") {
-      text += `| 影響あるユーザーの種類（管理職/事務、一般職員、保護者/子ども） | ${priorityScores[8]} |\n`;
-      text += `| 感情の変化 | ${priorityScores[9]} |\n`;
+      text += `| 影響あるユーザーの種類（管理職/事務、一般職員、保護者/子ども） | ${priorityScores[4]} |\n`;
+      text += `| 感情の変化 | ${priorityScores[5]} |\n`;
     }
     text += `| 社外コミット | ${priorityScores[6]} |\n`;
     text += `| 事業戦略的観点 | ${priorityScores[7]} |\n`;
