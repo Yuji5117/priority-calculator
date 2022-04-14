@@ -32,23 +32,13 @@ const Header = ({
       text += `(施設アカウント数×頻度+社内関係者)×(関係者×感情の変化+コミット有無+事業戦略的観点)=メリット量`;
     }
     text += "\n";
-    if (priorityType === "1") {
-      text += `(${priorityScores[0]}×${
-        priorityScores[1]
-      }+${getCorporateInsiderNum(priorityScores[2], priorityScores[3])})×(${
-        priorityScores[4]
-      }×${priorityScores[5]}+${priorityScores[6]}+${
-        priorityScores[7]
-      })=${priorityScore}`;
-    } else if (priorityType === "2") {
-      text += `(${priorityScores[0]}×${
-        priorityScores[1]
-      }+${getCorporateInsiderNum(priorityScores[2], priorityScores[3])})×(${
-        priorityScores[4]
-      }×${priorityScores[5]}+${priorityScores[6]}+${
-        priorityScores[7]
-      })=${priorityScore}`;
-    }
+    text += `(${priorityScores[0]}×${
+      priorityScores[1]
+    }+${getCorporateInsiderNum(priorityScores[2], priorityScores[3])})×(${
+      priorityScores[4]
+    }×${priorityScores[5]}+${priorityScores[6]}+${
+      priorityScores[7]
+    })=${priorityScore}`;
 
     return text;
   };
