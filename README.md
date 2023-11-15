@@ -34,9 +34,6 @@ git clone https://github.com/Yuji5117/priority-calculator.git
 3. 画面上部のメモアイコンを押下し、Markdown形式でクリップボードにコピペする
 
 
----
-![Screen Shot 2022-04-12 at 8 17 51](https://user-images.githubusercontent.com/50049575/162848415-a80bf4ef-7a14-4e53-97cc-1bdd14ab9d3a.png)
-
 
 ## Develop Setup
 
